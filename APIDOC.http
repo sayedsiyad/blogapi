@@ -1,13 +1,64 @@
 #API for creating account for user
 
+###
+POST  http://127.0.0.1:8000/api/users/
+Content-Type: application/json
+
+{
+    "username":"django",
+    "email":"django@gmail.com",
+    "password":"password123"
+}
+
 #Api for create a new post
+###
+
+POST  http://127.0.0.1:8000/api/posts/
+Content-Type: application/json
+Authorization: Token a81022ab31bc9dbdeebcef4d9181493900c11dcd
+
+{
+    "title":"ga",
+    "description":"goood morning"
+}
 
 # API for list all posts
+###
+GET  http://127.0.0.1:8000/api/posts/
+Authorization: Token a81022ab31bc9dbdeebcef4d9181493900c11dcd  
 
 # API for fetching post detail
 
-# Api for updating a post
+###
+GET  http://127.0.0.1:8000/api/posts/1/
+Authorization: Token a81022ab31bc9dbdeebcef4d9181493900c11dcd
 
-# Api for deleting a post
+#commenting a message
+
+###
+POST http://127.0.0.1:8000/api/posts/1/comments/
+Content-Type: application/json
+Authorization: Token a81022ab31bc9dbdeebcef4d9181493900c11dcd
+
+{
+"message":"hai"
+}
+
+#api for getting token
+
+###
+POST http://127.0.0.1:8000/api/token/
+Content-Type: application/json
+
+{
+    "username":"django",
+    "password":"password123"
+}
 
 
+#api call for liked post
+
+###
+
+POST  http://127.0.0.1:8000/api/posts/1/add-like/
+Authorization: Token a81022ab31bc9dbdeebcef4d9181493900c11dcd
